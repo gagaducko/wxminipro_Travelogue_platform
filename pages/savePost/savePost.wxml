@@ -1,0 +1,48 @@
+<!--pages/savePost/savePost.wxml-->
+<view class="container">
+	<!-- 第一部分：封面 -->
+	<view class="part1">
+		<button class="part1_btn1" hover-class="hover" bindtap="chooseimage">请选择封面图片</button>
+  		<image src="{{tempFilePaths}}" style="width:750rpx; height: 450rpx; border: 2px solid blue;" />
+	</view>
+
+	<!-- 第二部分：title与content -->
+	<view style="width: 750rpx;">
+		<mp-form>
+			<mp-cells>
+				<mp-cell title="标题" style="margin-top: 15rpx; margin-bottom: 15rpx;">
+					<input bindinput='getInputValueTitle' type="title" class="weui-input" placeholder="{{title}}"/>
+				</mp-cell>
+				<mp-cell title="简介" style="margin-top: 15rpx; margin-bottom: 15rpx;">
+					<textarea style="height: 150rpx;" bindinput='getInputValueSummary' name="summary" id="su"  cols="20" rows="5"  placeholder="{{summary}}" ></textarea>
+				</mp-cell>
+				<mp-cell title="游记分类" style="margin-top: 15rpx; margin-bottom: 15rpx;">
+					<picker bindchange="bindPickerChange" value="{{mainType}}" range="{{typeArray}}">
+						<view class="picker">
+							当前选择：{{typeArray[mainType]}}
+						</view>
+					</picker>
+				</mp-cell>
+				<mp-cell title="标签1" style="margin-top: 15rpx; margin-bottom: 15rpx;">
+					<input bindinput='getInputValueTypeOne' type="typeone" class="weui-input" placeholder="{{type1}}"/>
+				</mp-cell>
+				<mp-cell title="标签2" style="margin-top: 15rpx; margin-bottom: 15rpx;">
+					<input bindinput='getInputValueTypeTwo' type="typetwo" class="weui-input" placeholder="{{type2}}"/>
+				</mp-cell>
+			</mp-cells>
+		</mp-form>
+	</view>
+	<!-- 第三部分：提交 -->
+	<view wx:if="{{type == 1}}" class="part1">
+		<button class="part1_btn1" hover-class="hover" bindtap="saveIt">保存</button>
+	</view>
+	<view wx:if="{{type == 2}}" class="part1">
+		<button class="part1_btn1" hover-class="hover" bindtap="postIt">发表</button>
+	</view>
+	<view wx:if="{{type == 3}}" class="part1">
+		<button class="part1_btn1" hover-class="hover" bindtap="updateIt">更新</button>
+	</view>
+	<view wx:if="{{type == 4}}" class="part1">
+		<button class="part1_btn1" hover-class="hover" bindtap="updatePostIt">提交审核</button>
+	</view>
+</view>

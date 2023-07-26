@@ -1,0 +1,76 @@
+{
+    "pages": [
+        "pages/myInfo/myInfo",
+        "pages/more/more",
+        "pages/myEditor/myEditor",
+        "pages/searchpage/searchpage",
+        "pages/index/index",
+        "pages/editor/editor",
+        "pages/paperDetail/paperDetail",
+        "pages/userInfo/userInfo",
+        "pages/logs/logs",
+        "pages/savePost/savePost",
+        "pages/caogaodetail/caogaodetail",
+        "pages/detials/detials",
+        "pages/myPaper/myPaper",
+        "pages/myStar/myStar",
+        "pages/myFoot/myFoot",
+        "pages/checker/checker",
+        "pages/superSearch/superSearch",
+        "pages/searchRes/searchRes",
+        "pages/fansFocus/fansFocus",
+        "pages/notPass/notPass",
+        "pages/myGot/myGot",
+        "pages/choose/choose",
+        "pages/showMap/showMap"
+    ],
+    "window": {
+        "enablePullDownRefresh": true,
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#88cee4",
+        "navigationBarTitleText": "游记demo",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#000000",
+        "selectedColor": "#5b9bd5",
+        "backgroundColor": "#b0e2bf",
+        "position": "bottom",
+        "borderStyle": "black",
+        "navigationBarTextStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "主页",
+                "iconPath": "image/navBar/allInfo_off.png",
+                "selectedIconPath": "image/navBar/allInfo_on.png"
+            },
+            {
+                "pagePath": "pages/searchpage/searchpage",
+                "text": "搜索",
+                "iconPath": "image/navBar/search_off.png",
+                "selectedIconPath": "image/navBar/search_on.png"
+            },
+            {
+                "pagePath": "pages/more/more",
+                "text": "发布",
+                "iconPath": "image/navBar/more_off.png",
+                "selectedIconPath": "image/navBar/more_on.png"
+            },
+            {
+                "pagePath": "pages/myInfo/myInfo",
+                "text": "我的",
+                "iconPath": "image/navBar/myInfo_off.png",
+                "selectedIconPath": "image/navBar/myInfo_on.png"
+            }
+        ]
+    },
+    "useExtendedLib": {
+        "weui": true
+    },
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

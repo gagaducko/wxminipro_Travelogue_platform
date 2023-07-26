@@ -1,0 +1,59 @@
+<!--pages/paperDetail/paperDetail.wxml-->
+<view class="image_container">
+    <image class="image_placeholder" src="{{coverImg}}" mode="aspectFill"></image>
+    <text class="image_title">{{title}}</text>
+</view>
+<view>
+    <view class="top">
+        <view class="center">
+            <view class="center_top" bindtap="turnUserInfo">
+                <view class="center_img">
+                    <image class="user_head" src="{{author.avatarUrl}}"></image>
+                </view>
+                <view class="center_info">
+                    <view class="center_name">{{author.nickName}}</view>
+                </view>
+                <button class='goodbutton' hover-class="hover" style="width:30%" bindtap='focus'>{{isFocus}}</button>
+            </view>
+        </view>
+        <image src='/image/backview/waveImage.gif' mode='scaleToFill' class='gif-wave'></image>
+    </view>
+</view>
+<!-- 详情 -->
+<view class="details_container">
+    <editor read-only="{{readOnly}}" id="editor" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange" bindready="onEditorReady">
+    </editor>
+</view>
+<view class="recommandTime">
+    <text class="commandPart">评论区</text>
+    <view wx:if="{{commandList.length==0}}"  class="commandPartIn">暂无评论</view>
+    <view wx:if="{{commandList.length!=0}}" class="cardPart">
+		<view class='card' wx:for="{{commandList}}" wx:key="xxx">
+			<view class="askPart">
+				<image src="{{item.avatarUrl}}"></image>
+				<text>{{item.nickName}}: {{item.content}}</text>
+			</view>
+		</view>
+    </view>
+</view>
+<!-- 日期 -->
+<text class="date">{{date}}</text>
+<text class="date">{{isStar}}</text>
+<!-- 下一条 -->
+<view class="next_container" hover-class="next_container_hover" bindtap="next">
+    <image class="next_image" src="/image/myIcon/star.png" mode="aspectFill" />
+</view>
+<!-- END -->
+
+<!-- <view>评论</view> -->
+<!-- END -->
+<!-- 底部评论 -->
+<view class="foot">
+    <view class="say">
+        <view class="flex">
+            <image class="say_img" src="/image/myIcon/plan.png"></image>
+            <input confirm-type="send" class="say_inp" placeholder="{{ placeholder }}" value="{{ comment_text }}" focus="{{ focus }}" bindblur="blur" bindconfirm="confirm"></input>
+        </view>
+    </view>
+</view>
+<!-- END -->

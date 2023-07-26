@@ -1,0 +1,16 @@
+<view class="img-box" bindtap="toDetials" data-id="{{item.id}}">
+    <img-loader  default-image='/image/none-url.png' mode='widthFix' original-image='{{item.frontImage.url}}'/>
+    <view class="box-content padding-sm">
+      <text class="text-black text-bold">{{item.title}}</text>
+      <view class="text-gray text-sm padding-top">
+        <view class="cf">
+          <view class="fl" style="margin-top:3px">
+             <view class="cu-tag radius sm" wx:for="{{item.tags}}" wx:for-item="tag" wx:key>{{tag}}</view>
+          </view>
+          <view class="fr">
+            <text class="cuIcon-attentionfill margin-lr-xs text-right"></text>{{item.likeNum}}
+          </view>
+        </view>
+      </view>
+    </view>
+</view>

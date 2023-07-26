@@ -1,0 +1,19 @@
+/* pages/searchRes/searchRes.wxss */
+page {
+	height: 100%;
+	background: radial-gradient(200% 100% at bottom center, #b0e2bf , #88cee4);
+  } 
+	
+  .userinfo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #aaa;
+  }
+  
+  .index-nav{
+	position:fixed;top:0;
+	z-index: 999
+  }
+  .container{
+  }

@@ -1,0 +1,79 @@
+/* pages/notPass/notPass.wxss */
+page {
+	background: radial-gradient(200% 100% at bottom center, #b0e2bf, #88cee4);
+}
+
+/* 关于输入框 */
+.viewAsk {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 40rpx;
+	margin-top: 50rpx;
+}
+
+/* border-radius: 98rpx;是控制按钮边变圆 */
+.part1_btn1 {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	width: 80%;
+	background-color: rgb(252, 126, 67);
+	color: white;
+	border-radius: 98rpx;
+	background: bg_red;
+}
+
+/* 按下变颜色 */
+.hover {
+	top: 3rpx;
+	background: rgb(236, 179, 156);
+}
+
+.textIt {
+	font-size: xx-large;
+	font-weight: 700;
+	align-items: center;
+	align-self: center;
+}
+
+
+.cardPart {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.card {
+	width: 90%;
+	height: 400rpx;
+	margin-bottom: 10rpx;
+	margin-top: 40rpx;
+	border-radius: 20px;
+	/*4个边框圆角样式都为20px*/
+	background-color: lightgray;
+	box-shadow: 8rpx 4rpx 4rpx #707b8b;
+	position: relative;
+	border: 2rpx solid #707b8b;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.askPart {
+	margin: 30rpx;
+	height: 250rpx;
+	align-self: start;
+}
+
+.askPart image {
+	height: 60rpx;
+	width: 60rpx;
+	margin-right: 30rpx;
+}
+
+.askPart text {
+	font-size: larger;
+	font-weight: 600;
+}

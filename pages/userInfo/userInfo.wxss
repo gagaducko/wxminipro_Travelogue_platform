@@ -1,0 +1,45 @@
+/* pages/userInfo/userInfo.wxss */
+page {
+	background: radial-gradient(200% 100% at bottom center, #b0e2bf , #88cee4);
+  } 
+  
+.container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 200rpx 0;
+	box-sizing: border-box;
+} 
+
+.avatar-wrapper {
+  padding: 0;
+  width: 56px !important;
+  border-radius: 8px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+}
+
+
+/* border-radius: 98rpx;是控制按钮边变圆 */
+.goodbutton {
+	margin-top: 30px;
+	width: 80%;
+	background-color: rgb(252, 126, 67);
+	color: white;
+	border-radius: 98rpx;
+	background: bg_red;
+  }
+   
+  /* 按下变颜色 */
+  .hover {
+	  top: 3rpx;
+	  background:  rgb(236, 179, 156);
+  }

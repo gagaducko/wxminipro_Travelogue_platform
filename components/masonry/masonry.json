@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "componentGenerics": {
+    "masonry-item": {
+      "default": ""
+    }
+  }
+}

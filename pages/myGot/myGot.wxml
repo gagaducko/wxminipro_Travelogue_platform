@@ -1,0 +1,28 @@
+<!--pages/myGot/myGot.wxml-->
+<view class="container">
+<!-- 关于个人数据的维护↓ -->
+<view class='background_grey'>
+    <!-- 身体数据卡 -->
+    <view class='my_body_data card' bindtap="get1">
+        <view class='my_sport_data_title'>
+            <text>我的文章成就</text>
+            <image class='top_message_right' src='/image/icon/right.png'></image>
+        </view>
+    </view>
+    <!-- 饮食卡 -->
+    <view class='my_sport_data card' bindtap="get2">
+        <view class='my_sport_data_title'>
+            <text>我的粉丝成就</text>
+            <image class='top_message_right' src='/image/icon/right.png'></image>
+        </view>
+    </view>
+    <!-- 心理健康状况卡 -->
+    <view class='my_sport_data card' bindtap="get3">
+        <view class='my_sport_data_title'>
+            <text>我的足迹成绩</text>
+            <image class='top_message_right' src='/image/icon/right.png'></image>
+        </view>
+    </view>
+</view>
+<!-- 关于个人数据的维护↑ -->
+</view>

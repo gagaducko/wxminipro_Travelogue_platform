@@ -1,0 +1,50 @@
+<!--pages/more/more.wxml-->
+<view wx:if="{{!openid}}" class="viewUnLogin">
+  <image class="imageUnLogin" src = "/image/backview/background.png"></image>
+  <view class="textUnLogin">欢迎使用冷鸭游记~</view>
+  <button class="loginButton" lang="zh_CN" open-type="getUserInfo" bindtap="getUserInfo">请登录</button>
+</view>
+<view wx:if="{{openid}}">
+  <text class="textTitle">已保存的文档</text>
+  <view wx:if="{{newsList.length}}" class="news-list">
+    <block wx:for="{{newsList}}" wx:key="*this">
+      <navigator url="/pages/caogaodetail/caogaodetail?id={{item.id}}" style="width: 100%;">
+        <view class="news-item">
+          <view class="news-text">
+            <view class="news-title">标题：{{item.title}}</view>
+            <view class="news-summary">简介：{{item.summary}}</view>
+            <view class="news-date">提交日期：{{item.date}}</view>
+          </view>
+          <image style="width: 200rpx; height: 150rpx; border-radius: 10rpx; margin-bottom: 10rpx;"
+              src="{{item.coverImg}}" mode="aspectFill"></image>
+        </view>
+      </navigator>
+    </block>
+  </view>
+  <view wx:if="{{!newsList.length}}" class="news-list">
+    <text class="noPic">暂无存稿，请新建哦~</text>
+  </view>
+  <text class="textTitle">正在审核中的游记</text>
+  <view wx:if="{{newsList_shenhe.length}}" class="news-list">
+    <block wx:for="{{newsList_shenhe}}" wx:key="*this">
+      <navigator url="/pages/checker/checker?id={{item.id}}&type=2" style="width: 100%;">
+        <view class="news-item">
+          <view class="news-text">
+            <view class="news-title">标题：{{item.title}}</view>
+            <view class="news-summary">简介：{{item.summary}}</view>
+            <view class="news-date">提交日期：{{item.date}}</view>
+          </view>
+          <image style="width: 200rpx; height: 150rpx; border-radius: 10rpx; margin-bottom: 10rpx;"
+              src="{{item.coverImg}}" mode="aspectFill"></image>
+        </view>
+      </navigator>
+    </block>
+  </view>
+  <view wx:if="{{!newsList_shenhe.length}}" class="news-list">
+    <text class="noPic">暂无审核，请发表哦~</text>
+  </view>
+
+  <view class="bottomView">
+    <button bindtap="turnEditor" class='goodbutton' hover-class="hover">新建</button>
+  </view>
+</view>

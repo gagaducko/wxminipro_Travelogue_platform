@@ -1,0 +1,87 @@
+<!--pages/myInfo/myInfo.wxml-->
+<view wx:if="{{!openid}}" class="viewUnLogin">
+  <image class="imageUnLogin" src = "/image/backview/background.png"></image>
+  <view class="textUnLogin">欢迎使用冷鸭游记~</view>
+  <button class="loginButton" lang="zh_CN" open-type="getUserInfo" bindtap="getUserInfo">请登录</button>
+</view>
+<view wx:if="{{openid}}">
+  <view>
+    <view class="top">
+		<view class="center">
+			<view class="center_top" bindtap="turnUserInfo">
+				<view class="center_img">
+					<image class="user_head" src="{{userinfo.avatarUrl}}"></image>
+				</view>
+				<view class="center_info">
+					<view class="center_name">{{userinfo.nickName}}</view>
+				</view>
+			</view>
+		</view>
+		<image src='/image/backview/waveImage.gif' mode='scaleToFill' class='gif-wave'></image>
+	</view>
+  </view>
+  <!-- 第二个部分，就是点赞、收藏等有多少 -->
+  <view class="padding flex text-center text-grey bg-white">
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xxl text-orange">{{visitTotal}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-attentionfill"></text> 观看量</view>
+    </view>
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xxl text-blue">{{starCount}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-favorfill"></text> 收藏量</view>
+    </view>
+    <view class="flex flex-sub flex-direction">
+      <view class="text-xxl text-green">{{forksCount}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-timefill"></text> 粉丝</view>
+    </view>
+  </view>
+  <!-- 第三个部分，一些工具性的功能 -->
+  <view class="view_2">
+    <view class="view_tupianwenzi">
+      <image class="image_tupian" src="/image/myIcon/mypaper.png" bindtap="myPaper"></image>
+      <text class="text_saoyisao">我的游记</text>
+    </view>
+    <view class="view_tupianwenzi">
+      <image class="image_tupian" src="/image/myIcon/mail.png"></image>
+      <text class="text_saoyisao">我的信息</text>
+    </view>
+    <view class="view_tupianwenzi" bindtap="turnChoose">
+      <image class="image_tupian" src="/image/myIcon/place.png"></image>
+      <text class="text_saoyisao">我的足迹</text>
+    </view>
+    <view class="view_tupianwenzi" bindtap="toEditor">
+      <image class="image_tupian" src="/image/myIcon/editor.png"></image>
+      <text class="text_saoyisao">编辑专区</text>
+    </view>
+  </view>
+  <view class="view_2">
+    <view class="view_tupianwenzi">
+      <image class="image_tupian" src="/image/myIcon/star.png" bindtap="myStar"></image>
+      <text class="text_saoyisao">我的收藏</text>
+    </view>
+	<view class="view_tupianwenzi">
+      <image class="image_tupian" src="/image/myIcon/eye.png"></image>
+      <text class="text_saoyisao">我的关注</text>
+    </view>
+    <view class="view_tupianwenzi">
+      <image class="image_tupian" src="/image/myIcon/plan.png"></image>
+      <text class="text_saoyisao">我的计划</text>
+    </view>
+    <view class="view_tupianwenzi">
+      <image class="image_tupian" src="/image/myIcon/win.png" bindtap="goMyGot"></image>
+      <text class="text_saoyisao">我的成就</text>
+    </view>
+  </view>
+  <!-- 第四个部分，一些相关的信息 -->
+  <view class="shareAbout">
+    <view class="extra">
+      <button class="item icon-arrow" bindtap="naviToAbout">关于我们</button>
+      <view class="divLine"></view>
+      <button class="item icon-arrow" open-type="share">分享小程序</button>
+    </view>
+  </view>
+
+</view>

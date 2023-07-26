@@ -1,0 +1,9 @@
+<!--pages/searchRes/searchRes.wxml-->
+<view style="height:100%; background-color: #F8F8FF;">
+  <scroll-view scroll-y class="container">
+      <masonry wx:if='{{(items&&items.length > 0)}}' generic:masonry-item="img-box" id="masonry" interval-width="20rpx"></masonry>
+      <no-data wx:if='{{(!items||items.length == 0)}}'>
+        <view>暂无相关数据</view>
+      </no-data>
+    </scroll-view>
+</view>

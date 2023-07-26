@@ -1,0 +1,28 @@
+<!--pages/notPass/notPass.wxml-->
+<view wx:if="{{type==1}}">
+	<view class="viewAsk">
+		<textarea id="textQuest" maxlength="150" bindinput="getInput" style="border: 3px solid rgb(9, 52, 70);border-radius:5px;background-color:rgba(241,241,241,.98);width: 650rpx;height: 300rpx;padding: 10px;resize: none;" placeholder="驳回的理由是：">
+		</textarea>
+	</view>
+
+	<view class="buttonPart">
+		<button bindtap="updateIt" class="part1_btn1" hover-class="hover">提交</button>
+		<button bindtap="backView" class="part1_btn1" hover-class="hover">返回上页</button>
+	</view>
+</view>
+<view wx:if="{{type==2}}">
+	<view wx:if="{{!haveCom}}">
+		<text class="textIt">暂无进展，请耐心等待审核哦~</text>
+	</view>
+	<view wx:if="{{haveCom}}" class="cardPart">
+		<view class='card' wx:for="{{recomList}}" wx:key="xxx">
+			<view class="askPart">
+				<image src="/image/navBar/allInfo_off.png"></image>
+				<text>{{item.content}}</text>
+			</view>
+			<view class="timePart">
+				<text>驳回时间：{{item.date}}</text>
+			</view>
+		</view>
+	</view>
+</view>

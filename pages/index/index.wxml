@@ -1,0 +1,13 @@
+<view style="height:100%; background-color: #F8F8FF;">
+  <scroll-view scroll-x class="bg-white nav index-nav" >
+    <view class="cu-item {{TabCur==theme.id?'text-bold text-lg':''}}" wx:for="{{themes}}" wx:for-item="theme" wx:key bindtap="tabSelect" data-id="{{theme.id}}">
+      {{theme.name}}
+    </view>
+  </scroll-view>
+  <scroll-view scroll-y class="container">
+      <masonry wx:if='{{(items&&items.length > 0)}}' generic:masonry-item="img-box" id="masonry" interval-width="20rpx"></masonry>
+      <no-data wx:if='{{(!items||items.length == 0)}}'>
+        <view>暂无相关数据</view>
+      </no-data>
+    </scroll-view>
+</view>

@@ -1,0 +1,38 @@
+<!--pages/superSearch/superSearch.wxml-->
+<view>
+  <view class="top">
+    <view class="search">
+      <view class="search_in">
+        <image src="/image/myIcon/eye.png"></image>
+        <input bindinput='getInputValue' type="text" placeholder="请输入标题"/>
+        <view bindtap="turnSearch" class="search_btn">搜索</view>
+      </view>
+    </view>
+  </view>
+  <text class="textnow">限定条件</text>
+  <view style="width: 750rpx;">
+		<mp-form>
+			<mp-cells>
+				<mp-cell title="年份" style="margin-top: 15rpx; margin-bottom: 15rpx;">
+					<input bindinput='getInputValueTitle' type="title" class="weui-input" placeholder="请输入年份"/>
+				</mp-cell>
+				<mp-cell title="作者" style="margin-top: 15rpx; margin-bottom: 15rpx;">
+					<input bindinput='getInputValueAuthor' type="title" class="weui-input" placeholder="请输入作者名"/>
+				</mp-cell>
+				<mp-cell title="游记分类" style="margin-top: 15rpx; margin-bottom: 15rpx;">
+					<picker bindchange="bindPickerChange" value="{{mainType}}" range="{{typeArray}}">
+						<view class="picker">
+							当前选择：{{typeArray[mainType]}}
+						</view>
+					</picker>
+				</mp-cell>
+				<mp-cell title="标签1" style="margin-top: 15rpx; margin-bottom: 15rpx;">
+					<input bindinput='getInputValueTypeOne' type="typeone" class="weui-input" placeholder="输入一个标签吧"/>
+				</mp-cell>
+				<mp-cell title="标签2" style="margin-top: 15rpx; margin-bottom: 15rpx;">
+					<input bindinput='getInputValueTypeTwo' type="typetwo" class="weui-input" placeholder="输入一个标签吧"/>
+				</mp-cell>
+			</mp-cells>
+		</mp-form>
+	</view>
+</view>

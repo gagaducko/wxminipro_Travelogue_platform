@@ -1,0 +1,23 @@
+<!--pages/searchpage/searchpage.wxml-->
+<view>
+  <view class="top">
+    <view class="search">
+      <view class="search_in">
+        <!-- 使用代码请更改图片路径 -->
+        <image src="/image/myIcon/eye.png"></image>
+        <input bindinput='getInputValue' type="text" placeholder="请输入搜索内容"/>
+        <view bindtap="turnSearch" class="search_btn">搜索</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="container1">
+  <view class="wrapper" hidden="{{tagState}}" bindtouchmove="handletouchmove" bindtouchstart="handletouchstart">
+      <view wx:for="{{tagEle}}" wx:key="{{key}}" wx:index="{{index}}" id="tag{{index}}" style="opacity:{{item.opacity}};top: {{item.top}};left: {{item.left}}; z-index: {{item.zIndex}};font-size: {{item.fontSize}}">{{item.title}}</view>
+  </view>
+</view>
+
+<view>
+  <button bindtap="trunSuper" class="btn-primary">精准查找</button>
+</view>

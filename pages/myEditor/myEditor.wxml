@@ -1,0 +1,78 @@
+<!--pages/myEditor/myEditor.wxml-->
+<view wx:if="{{case==0}}" class="viewUnLogin">
+	<image class="imageUnLogin" src="/image/backview/background.png"></image>
+	<view class="textUnLogin">您还不是编辑哦~</view>
+	<button class="loginButton" lang="zh_CN" bindtap="wantToBe">申请编辑</button>
+</view>
+
+<view wx:if="{{case==1}}" class="viewUnLogin">
+	<image class="imageUnLogin" src="/image/backview/background.png"></image>
+	<view class="textUnLogin">您已经申请了，请耐心等待哦~</view>
+</view>
+
+<!-- 小编 -->
+<view wx:if="{{case==2}}">
+	<view class="part1">
+		<text class="part1Text1">身份：小编</text>
+		<text class="part1Text2">审批游记数：{{assessNum}}</text>
+	</view>
+	<text class="textTitle">正在审核中的游记</text>
+	<view wx:if="{{newsList_shenhe.length}}" class="news-list">
+		<block wx:for="{{newsList_shenhe}}" wx:key="*this">
+			<navigator url="/pages/checker/checker?id={{item.id}}&type=1&isMain=0" style="width: 100%;">
+				<view class="news-item">
+					<view class="news-text">
+						<view class="news-title">标题：{{item.title}}</view>
+						<view class="news-summary">简介：{{item.summary}}</view>
+						<view class="news-date">提交日期：{{item.date}}</view>
+					</view>
+					<image style="width: 200rpx; height: 150rpx; border-radius: 10rpx; margin-bottom: 10rpx;" src="{{item.coverImg}}" mode="aspectFill"></image>
+				</view>
+			</navigator>
+		</block>
+	</view>
+	<view wx:if="{{!newsList_shenhe.length}}" class="news-list">
+		<text class="noPic">暂无需要审核的哦~</text>
+	</view>
+</view>
+
+<!-- 主编 -->
+<view wx:if="{{case==3}}">
+	<view class="part1">
+		<text class="part1Text1">身份：主编</text>
+		<text class="part1Text2">审批游记数：{{assessNum}}</text>
+	</view>
+	<text class="textTitle">上报加急审核的游记</text>
+	<view wx:if="{{newsList_shenhe.length}}" class="news-list">
+		<block wx:for="{{newsList_shenhe}}" wx:key="*this">
+			<navigator url="/pages/checker/checker?id={{item.id}}&type=1&isMain=1" style="width: 100%;">
+				<view class="news-item">
+					<view class="news-text">
+						<view class="news-title">标题：{{item.title}}</view>
+						<view class="news-summary">简介：{{item.summary}}</view>
+						<view class="news-date">提交日期：{{item.date}}</view>
+					</view>
+					<image style="width: 200rpx; height: 150rpx; border-radius: 10rpx; margin-bottom: 10rpx;" src="{{item.coverImg}}" mode="aspectFill"></image>
+				</view>
+			</navigator>
+		</block>
+	</view>
+	<text class="textTitle">正在审核中的游记</text>
+	<!-- <view wx:if="{{newsList_shenhe.length}}" class="news-list">
+		<block wx:for="{{newsList_shenhe}}" wx:key="*this">
+			<navigator url="/pages/checker/checker?id={{item.id}}&type=1&isMain=1" style="width: 100%;">
+				<view class="news-item">
+					<view class="news-text">
+						<view class="news-title">标题：{{item.title}}</view>
+						<view class="news-summary">简介：{{item.summary}}</view>
+						<view class="news-date">提交日期：{{item.date}}</view>
+					</view>
+					<image style="width: 200rpx; height: 150rpx; border-radius: 10rpx; margin-bottom: 10rpx;" src="{{item.coverImg}}" mode="aspectFill"></image>
+				</view>
+			</navigator>
+		</block>
+	</view> -->
+	<view wx:if="{{newsList_shenhe.length}}" class="news-list">
+		<text class="noPic">暂无需要审核的哦~</text>
+	</view>
+</view>

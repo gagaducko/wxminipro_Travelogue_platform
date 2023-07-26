@@ -1,0 +1,138 @@
+/* pages/myEditor/myEditor.wxss */
+page {
+	background: radial-gradient(200% 100% at bottom center, #b0e2bf, #88cee4);
+}
+
+/* case 0 */
+.viewUnLogin {
+	margin-top: 50rpx;
+	margin-bottom: 50rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.imageUnLogin {
+	margin-top: 100rpx;
+	margin-bottom: 50rpx;
+	width: 450rpx;
+	height: 450rpx;
+}
+
+.textUnLogin {
+	font-size: x-large;
+	font-weight: 400;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin-bottom: 50rpx;
+}
+
+.loginButton {
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #2b6456;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 9px #999;
+}
+
+.loginButton:hover {
+	background-color: #3e8e41
+}
+
+.part1 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+	margin: 30rpx;
+}
+
+.part1Text1 {
+	font-size: xx-large;
+	font-weight: 800;
+}
+
+.part1Text2 {
+	font-size: large;
+	font-weight: 500;
+	color: blueviolet;
+}
+
+.textTitle {
+	font-size: 40rpx;
+	font-weight: bold;
+	margin: 10rpx;
+}
+
+
+.news-list {
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10rpx;
+}
+
+.news-item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	align-self: center;
+	justify-content: space-between;
+	width: 100%;
+	margin-bottom: 20rpx;
+	padding: 10rpx;
+	border-radius: 10rpx;
+	background-color: #fff;
+	box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.1);
+}
+
+.news-text {
+	display: flex;
+	flex-direction: column;
+	width: 500rpx;
+	height: 100%;
+}
+
+.news-img {
+	width: 200rpx;
+	height: 150rpx;
+	border-radius: 10rpx;
+	margin-bottom: 10rpx;
+}
+
+.news-title {
+	font-size: 32rpx;
+	font-weight: bold;
+	margin-bottom: 10rpx;
+}
+
+.news-summary {
+	font-size: 14rpx;
+	line-height: 1.5;
+	color: #999;
+	margin-bottom: 10rpx;
+}
+
+.news-date {
+	font-size: 12rpx;
+	color: rgb(121, 0, 0);
+}
+
+.noPic {
+	margin-top: 30rpx;
+	font-size: larger;
+	font-weight: 700;
+	color: rgb(61, 34, 0);
+	margin-bottom: 200rpx;
+}
